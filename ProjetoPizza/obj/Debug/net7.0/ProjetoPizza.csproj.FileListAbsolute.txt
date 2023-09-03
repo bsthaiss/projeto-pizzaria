@@ -1,0 +1,14 @@
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\bin\Debug\net7.0\ProjetoPizza.exe
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\bin\Debug\net7.0\ProjetoPizza.deps.json
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\bin\Debug\net7.0\ProjetoPizza.runtimeconfig.json
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\bin\Debug\net7.0\ProjetoPizza.dll
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\bin\Debug\net7.0\ProjetoPizza.pdb
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.AssemblyInfoInputs.cache
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.AssemblyInfo.cs
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.csproj.CoreCompileInputs.cache
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.dll
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\refint\ProjetoPizza.dll
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.pdb
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ProjetoPizza.genruntimeconfig.cache
+C:\Users\rosin\OneDrive\Favoritos compartilhados\Documentos\projeto-pizzaria\ProjetoPizza\obj\Debug\net7.0\ref\ProjetoPizza.dll
