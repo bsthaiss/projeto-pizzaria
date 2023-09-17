@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace ProjetoPizza.Models
 {
     public class Pedido
@@ -15,14 +12,14 @@ namespace ProjetoPizza.Models
         public static void CriarPedido()
         {
 
-            Console.WriteLine("Criar Novo Pedido!");
+            Console.WriteLine("Criar  Pedido!");
 
-            var novoPedido = new Pedido();
+            var Pedido = new Pedido();
 
             Console.WriteLine("Quem é o cliente?");
-            novoPedido.Cliente = Console.ReadLine();
+            Pedido.Cliente = Console.ReadLine();
             Console.WriteLine("Qual é o telefone do cliente?");
-            novoPedido.Telefone = Console.ReadLine();
+            Pedido.Telefone = Console.ReadLine();
 
             int escolha, resposta;
 
@@ -36,15 +33,7 @@ namespace ProjetoPizza.Models
                 }
 
                 escolha = int.Parse(Console.ReadLine());
-
-                if (escolha >= 1 && escolha <= Pizza.ListaDePizzas.Count)
-                {
-                    novoPedido.EscolhaPizzas.Add(Pizza.ListaDePizzas[escolha - 1]);
-                }
-                else
-                {
-                    Console.WriteLine("Opção Inválida.");
-                }
+                Pedido.EscolhaPizzas.Add(Pizza.ListaDePizzas[escolha - 1]);
 
                 Console.WriteLine("Deseja acrescentar mais alguma pizza? (1 - SIM | 2 - NÃO)");
                 resposta = int.Parse(Console.ReadLine());
@@ -53,18 +42,16 @@ namespace ProjetoPizza.Models
 
             double totalPedido = 0;
 
-            foreach (var pizza in novoPedido.EscolhaPizzas)
+            foreach (var pizza in Pedido.EscolhaPizzas)
             {
                 totalPedido += pizza.Preco;
             }
 
-            novoPedido.Total = totalPedido;
+            Pedido.Total = totalPedido;
 
             Console.WriteLine("PEDIDO CRIADO!");
             Console.WriteLine($"Total: R$ {totalPedido:F2}");
-            Console.Clear();
-
-            ListaDePedidos.Add(novoPedido);
+            ListaDePedidos.Add(Pedido);
         }
 
         public static void ListarPedidos()
@@ -75,7 +62,7 @@ namespace ProjetoPizza.Models
             foreach (var pedido in ListaDePedidos)
             {
                 Console.WriteLine($"CLIENTE: {pedido.Cliente}");
-
+                Console.WriteLine($"TELEFONE: {pedido.Telefone}");
                 Console.WriteLine("PIZZAS DO PEDIDO:");
                 foreach (var pizza in pedido.EscolhaPizzas)
                 {
@@ -85,6 +72,5 @@ namespace ProjetoPizza.Models
                 Console.WriteLine($"TOTAL: R$ {pedido.Total:F2}\n");
             }
         }
-
     }
 }

@@ -20,13 +20,11 @@ do
 {
     Menu();
     opcao = int.Parse(Console.ReadLine());
-    Console.Clear();
 
     switch (opcao)
     {
         case 1:
                 Pizza.AdicionarPizza();
-                Console.Clear();
         break;
         case 2:
                 Pizza.ListarPizza();

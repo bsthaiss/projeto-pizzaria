@@ -4,10 +4,8 @@ namespace ProjetoPizza.Models
     {
         public string Nome { get; set; }
         public string Sabores { get; set; }
-        public double Preco { get; set; }
-        
+        public double Preco { get; set; }     
         public static List<Pizza> ListaDePizzas { get; set; } = new List<Pizza>();
-
         public static void AdicionarPizza()
         {
             var novaPizza = new Pizza();
