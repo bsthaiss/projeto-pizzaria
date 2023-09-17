@@ -2,54 +2,41 @@
 
 Console.WriteLine("Bem-vindo(a) ao Projeto Pizzaria!\n");
 
-int opcao = 0;
-List<Pizza> ListaDePizzas = new List<Pizza>();
+int opcao;
+
+static void Menu()
+{
+        Console.Clear();
+        Console.WriteLine("Escolha uma opção: ");
+        Console.WriteLine("1 - Adicionar Pizza");
+        Console.WriteLine("2 - Listar as Pizzas");
+        Console.WriteLine("3 - Criar Novo Pedido");
+        Console.WriteLine("4 - Listar Pedidos");
+        Console.WriteLine("0 - Sair\n");
+        Console.WriteLine("Digite sua opção: ");
+}
 
 do
 {
-    Console.WriteLine("Escolha uma opção: ");
-    Console.WriteLine("1 - Adicionar Pizza");
-    Console.WriteLine("2 - Listar as Pizzas\n");
-
-    Console.WriteLine("Digite sua opção: ");
+    Menu();
     opcao = int.Parse(Console.ReadLine());
     Console.Clear();
 
     switch (opcao)
     {
         case 1:
-                var novaPizza = new Pizza();
-
-                Console.WriteLine("Adicionar Pizza!");
-
-                Console.WriteLine("Digite o nome da pizza: ");
-                novaPizza.Nome = Console.ReadLine();
-                Console.WriteLine("Digite o sabor da pizza separados por vírgulas: ");
-                novaPizza.Sabores = Console.ReadLine();
-                Console.WriteLine("Digite o preço da pizza no formato (00,00): ");
-                novaPizza.Preco = double.Parse(Console.ReadLine());
-
-                Console.WriteLine("PIZZA CRIADA COM SUCESSO!");
-                ListaDePizzas.Add(novaPizza);
+                Pizza.AdicionarPizza();
                 Console.Clear();
         break;
         case 2:
-                Console.Clear();
-                Console.WriteLine("Listar as Pizzas");
-
-                foreach (var pizza in ListaDePizzas)
-                {
-                        Console.WriteLine($"NOME: {pizza.Nome}");
-                        Console.WriteLine($"SABORES: {pizza.Sabores}");
-
-                        double preco = pizza.Preco;
-                        preco.ToString("F2");
-                        Console.WriteLine($"PREÇO: R$ {preco}\n");
-                }
-
-                Console.WriteLine("Pressione qualquer tecla para voltar ao menu principal...\n");
-                Console.ReadKey();
+                Pizza.ListarPizza();
+        break;
+        case 3:
+                Pedido.CriarPedido();
+        break;
+        case 4:
+                Pedido.ListarPedidos();
         break;
     }
 
-} while (opcao > 0 && opcao <= 4);
+} while (opcao != 0);
