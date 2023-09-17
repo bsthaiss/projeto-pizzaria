@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj": {}
+    "C:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj": {}
   },
   "projects": {
-    "c:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj": {
+    "C:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj",
+        "projectUniqueName": "C:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj",
         "projectName": "ProjetoPizza",
-        "projectPath": "c:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj",
+        "projectPath": "C:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\ProjetoPizza.csproj",
         "packagesPath": "C:\\Users\\rosin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\obj\\",
+        "outputPath": "C:\\Users\\rosin\\OneDrive\\Favoritos compartilhados\\Documentos\\projeto-pizzaria\\ProjetoPizza\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rosin\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,38 +1,55 @@
 ﻿using ProjetoPizza.Models;
 
-Console.WriteLine("Bem-vindo(a) à Pizzaria!\n");
+Console.WriteLine("Bem-vindo(a) ao Projeto Pizzaria!\n");
 
-Console.WriteLine("Escolha as opções:");
-Console.WriteLine("1 - Adicionar uma Pizza");
-Console.WriteLine("2 - Listar as Pizzas\n");
+int opcao = 0;
+List<Pizza> ListaDePizzas = new List<Pizza>();
 
-Console.Write("Escolha sua opção: ");
-string opcao = Console.ReadLine();
+do
+{
+    Console.WriteLine("Escolha uma opção: ");
+    Console.WriteLine("1 - Adicionar Pizza");
+    Console.WriteLine("2 - Listar as Pizzas\n");
 
-List<Pizza> listaPizzas = new List<Pizza>();
+    Console.WriteLine("Digite sua opção: ");
+    opcao = int.Parse(Console.ReadLine());
+    Console.Clear();
 
-if (opcao == "1") {
-        var pizza = new Pizza();
+    switch (opcao)
+    {
+        case 1:
+                var novaPizza = new Pizza();
 
-        Console.Write("Digite o nome da pizza: ");
-        pizza.Nome = Console.ReadLine();
+                Console.WriteLine("Adicionar Pizza!");
 
-        Console.Write("Digite os sabores da sua pizza (separados por vírgula): ");
-        pizza.Sabores = Console.ReadLine().Split(",");
+                Console.WriteLine("Digite o nome da pizza: ");
+                novaPizza.Nome = Console.ReadLine();
+                Console.WriteLine("Digite o sabor da pizza separados por vírgulas: ");
+                novaPizza.Sabores = Console.ReadLine();
+                Console.WriteLine("Digite o preço da pizza no formato (00,00): ");
+                novaPizza.Preco = double.Parse(Console.ReadLine());
 
-        Console.Write("Digite o preço da sua pizza (00,00): ");
-        pizza.Preco = double.Parse(Console.ReadLine());
-        
-        Console.WriteLine("PIZZA CRIADA COM SUCESSO!");
-        listaPizzas.Add(pizza);
-}
+                Console.WriteLine("PIZZA CRIADA COM SUCESSO!");
+                ListaDePizzas.Add(novaPizza);
+                Console.Clear();
+        break;
+        case 2:
+                Console.Clear();
+                Console.WriteLine("Listar as Pizzas");
 
-else if (opcao == "2") {
-        foreach (var pizza in listaPizzas)
-        {
-            Console.WriteLine($"Nome: {pizza.Nome}");
-            Console.WriteLine($"Sabores: {string.Join(", ", pizza.Sabores)}"); 
-            Console.WriteLine($"Preço: R$ {pizza.Preco}");
-            Console.WriteLine();
-        }
-}
+                foreach (var pizza in ListaDePizzas)
+                {
+                        Console.WriteLine($"NOME: {pizza.Nome}");
+                        Console.WriteLine($"SABORES: {pizza.Sabores}");
+
+                        double preco = pizza.Preco;
+                        preco.ToString("F2");
+                        Console.WriteLine($"PREÇO: R$ {preco}\n");
+                }
+
+                Console.WriteLine("Pressione qualquer tecla para voltar ao menu principal...\n");
+                Console.ReadKey();
+        break;
+    }
+
+} while (opcao > 0 && opcao <= 4);
