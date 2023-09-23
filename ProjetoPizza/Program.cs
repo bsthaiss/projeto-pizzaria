@@ -6,7 +6,6 @@ int opcao;
 
 static void Menu()
 {
-        Console.Clear();
         Console.WriteLine("Escolha uma opção: ");
         Console.WriteLine("1 - Adicionar Pizza");
         Console.WriteLine("2 - Listar as Pizzas");
@@ -24,15 +23,19 @@ do
     switch (opcao)
     {
         case 1:
+                Console.Clear();
                 Pizza.AdicionarPizza();
         break;
         case 2:
+                Console.Clear();
                 Pizza.ListarPizza();
         break;
         case 3:
+                Console.Clear();
                 Pedido.CriarPedido();
         break;
         case 4:
+                Console.Clear();
                 Pedido.ListarPedidos();
         break;
     }
