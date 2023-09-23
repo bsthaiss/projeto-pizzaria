@@ -79,5 +79,107 @@ namespace ProjetoPizza.Models
                 Console.WriteLine();
             }
         }
+        public static void RealizarPagamento()
+        {
+                Console.WriteLine("Realizar Pagamento");
+                Console.WriteLine("Qual o número do pedido? ");
+
+                for (int i = 0; i < ListaDePedidos.Count; i++)
+                {
+                    if (!ListaDePedidos[i].Pago)
+                        Console.WriteLine($"#{i + 1}: Cliente - {ListaDePedidos[i].Cliente}, Total - R$ {ListaDePedidos[i].Total:F2}");
+                }
+
+                int numeroPedido = int.Parse(Console.ReadLine());
+
+                while (numeroPedido < 1 || numeroPedido > ListaDePedidos.Count || ListaDePedidos[numeroPedido - 1].Pago)
+                {
+                    Console.WriteLine("Número de pedido INVÁLIDO ou já foi PAGO. Por favor, tente novamente.");
+                }
+
+                var pedidoSelecionado = ListaDePedidos[numeroPedido - 1];
+                
+                Console.WriteLine($"Pedido selecionado: Cliente - {pedidoSelecionado.Cliente}, Total - R$ {pedidoSelecionado.Total:F2}");
+
+                Console.WriteLine("ESCOLHA A FORMA DE PAGAMENTO:");
+                Console.WriteLine("1 - Dinheiro");
+                Console.WriteLine("2 - Cartão de Débito");
+                Console.WriteLine("3 - Vale-Refeição");
+
+                while (formasPagamento.Count < 2)
+                {
+                    Console.Write("Opção: ");
+
+                    int opcao = int.Parse(Console.ReadLine());
+                    string formaPagamento = "";
+                    double valorPago = 0;
+
+                    switch (opcao)
+                    {
+                        case 1:
+                            formaPagamento = "Dinheiro";
+                            Console.Write("Valor em dinheiro: R$ ");
+                            while (!double.TryParse(Console.ReadLine(), out valorPago) || valorPago < 0)
+                            {
+                                Console.Write("Valor inválido. Por favor, insira um valor válido: R$ ");
+                            }
+                        break;
+
+                        case 2:
+                            formaPagamento = "Cartão de Débito";
+                            valorPago = pedidoSelecionado.Total;
+                        break;
+
+                        case 3:
+                            formaPagamento = "Vale-Refeição";
+                            valorPago = pedidoSelecionado.Total;
+                        break;
+
+                        default:
+                            Console.WriteLine("Opção inválida. Por favor, tente novamente.");
+                        continue;
+                    }
+
+                if (formasPagamento.Contains(formaPagamento))
+                {  
+                    Console.WriteLine("Essa forma de pagamento já foi utilizada para este pedido.");
+                }
+
+                else
+                {
+                    Console.WriteLine("Opção inválida. Por favor, tente novamente.");
+                }
+                
+                formasPagamento.Add(formaPagamento);
+                valorPagoTotal += valorPago;
+
+                Console.WriteLine("Forma de pagamento adicionada com sucesso!!!");
+
+                int resposta = 0;
+                Console.WriteLine("Deseja adicionar outra forma de pagamento? (1 - SIM | 2 - NÃO)");
+
+                if (resposta == 1)
+                {
+                    Console.WriteLine("Escolha umas das opções");
+                    Console.WriteLine("1 - Dinheiro");
+                    Console.WriteLine("2 - Cartão de Débito");
+                    Console.WriteLine("3 - Vale-Refeição");
+
+                    Console.ReadKey();
+                }
+
+                if (valorPagoTotal < pedidoSelecionado.Total)
+                {
+                    Console.WriteLine("Pagamento insuficiente. Operação cancelada.");
+                } 
+                else if (valorPagoTotal > pedidoSelecionado.Total && formasPagamento.Contains("Dinheiro"))
+                {
+                    Console.WriteLine($"Troco a ser devolvido: R$ {valorPagoTotal - pedidoSelecionado.Total:F2}");
+                }
+
+                Console.WriteLine("PAGAMENTO REALIZADO COM SUCESSO!!!");
+                pedidoSelecionado.Pago = true;
+            }   
+        }
     }
 }
