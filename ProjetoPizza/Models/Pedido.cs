@@ -6,8 +6,10 @@ namespace ProjetoPizza.Models
         public string Telefone { get; set; }
         public List<Pizza> EscolhaPizzas { get; set; } = new List<Pizza>();
         public double Total => EscolhaPizzas.Sum(pizza => pizza.Preco);
-
         public static List<Pedido> ListaDePedidos { get; } = new List<Pedido>();
+        public bool Pago { get; set; } = false;
+        private static List<string> formasPagamento = new List<string>();
+        private static double valorPagoTotal = 0;
 
         public static void CriarPedido()
         {
@@ -64,6 +66,17 @@ namespace ProjetoPizza.Models
                 }
 
                 Console.WriteLine($"Total: R$ {pedido.Total:F2}");
+
+                if (pedido.Pago)
+                {
+                    Console.WriteLine("Status do Pagamento: Pago");
+                }
+                else
+                {
+                    Console.WriteLine("Status do Pagamento: Pagamento Pendente");
+                }
+
+                Console.WriteLine();
             }
         }
     }

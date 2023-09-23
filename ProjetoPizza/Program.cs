@@ -11,6 +11,7 @@ static void Menu()
         Console.WriteLine("2 - Listar as Pizzas");
         Console.WriteLine("3 - Criar Novo Pedido");
         Console.WriteLine("4 - Listar Pedidos");
+        Console.WriteLine("5 - Realizar Pagamento");
         Console.WriteLine("0 - Sair\n");
         Console.WriteLine("Digite sua opção: ");
 }
@@ -37,6 +38,17 @@ do
         case 4:
                 Console.Clear();
                 Pedido.ListarPedidos();
+        break;
+        case 5:
+                Console.Clear();
+                Pedido.RealizarPagamento(); 
+        break;
+        case 0:
+                Console.WriteLine("Programa Finalizado!");
+                Console.Clear();
+        break;
+        default:
+                Console.WriteLine("Opção Inválida!");
         break;
     }
 
